@@ -1,120 +1,120 @@
-# animals = ['Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', 'Giraffe', 'Elephant', 'Bear', 'Panda', 'Dog', 'Bat', 'Rabbit', 'Tardigrade', 'Ice Dragon', 'Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', 'Giraffe', 'Elephant', 'Bear', 'Panda', 'Dog', 'Bat', 'Rabbit', 'Tardigrade', 'Ice Dragon']
+ animals = ['Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', 'Giraffe', 'Elephant', 'Bear', 'Panda', 'Dog', 'Bat', 'Rabbit', 'Tardigrade', 'Ice Dragon', 'Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', 'Giraffe', 'Elephant', 'Bear', 'Panda', 'Dog', 'Bat', 'Rabbit', 'Tardigrade', 'Ice Dragon']
 ​
-# animals = ['Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', 'Giraffe', 'Elephant', 'Bear']
+ animals = ['Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', 'Giraffe', 'Elephant', 'Bear']
 ​
-# # animals.sort()
+  animals.sort()
 ​
-# # print(animals)
+  print(animals)
 ​
-# # O(1)
+#   O(1)
 ​
-# # print(animals[3])
+  print(animals[3])
 ​
-# # animals.append("Snake")
+  animals.append("Snake")
 ​
-# # 0(N)
+#   0(N)
 ​
-# # for i in range(0, len(animals)):
-# #     print(animals[i])
+  for i in range(0, len(animals)):
+      print(animals[i])
 ​
-# # Print a list of every possible pair of animals in two lists?
-# # )(n^2)
+#   Print a list of every possible pair of animals in two lists?
+#   )(n^2)
 ​
-# # for i in range(0, len(animals)):
-# #     for j in range(0, len(animals)):
-# #         print(animals[i] + " -- " + animals[j])
-​
-​
-# # n^3
-​
-# # sum = 0
-​
-# # for i in range(0, len(animals)):
-# #     for j in range(0, len(animals)):
-# #         for k in range(0, len(animals)):
-# #             sum += 1
-# #             print(animals[i] + "-" + animals[j] + "-" + animals[k])
-​
-# # print(sum)
+  for i in range(0, len(animals)):
+      for j in range(0, len(animals)):
+          print(animals[i] + " -- " + animals[j])
 ​
 ​
-# # def get_animal_combos(l):
-# #     list_length = len(l)
-# #     if list_length == 0:
-# #         return [ [] ]
-# #     else:
-# #         animal_combos = []
-# #         previous_combos = get_animal_combos( l[1:] )
-# #         for combo in previous_combos:
-# #             animal_combos.append( combo )
-# #             animal_combos.append( combo + [l[0]] )
-# #         return animal_combos
+#   n^3
 ​
-# # combos = get_animal_combos(animals)
-# # print(combos)
-# # print(len(combos))
+  sum = 0
+​
+  for i in range(0, len(animals)):
+      for j in range(0, len(animals)):
+          for k in range(0, len(animals)):
+              sum += 1
+              print(animals[i] + "-" + animals[j] + "-" + animals[k])
+​
+  print(sum)
 ​
 ​
-# import random
+  def get_animal_combos(l):
+      list_length = len(l)
+      if list_length == 0:
+          return [ [] ]
+      else:
+          animal_combos = []
+          previous_combos = get_animal_combos( l[1:] )
+          for combo in previous_combos:
+              animal_combos.append( combo )
+              animal_combos.append( combo + [l[0]] )
+          return animal_combos
 ​
-# my_range = 10000000
-# size = 10000000
-# my_randoms = random.sample(range(my_range), size)
+  combos = get_animal_combos(animals)
+  print(combos)
+  print(len(combos))
 ​
-# # print(my_randoms)
 ​
-# my_value = random.randint(0, my_range)
+ import random
 ​
-# # def find_value_linear(sort_list, value):
-# #     for i in range(len(sort_list)):
-# #         if sort_list[i] == my_value:
-# #             return True
+ my_range = 10000000
+ size = 10000000
+ my_randoms = random.sample(range(my_range), size)
 ​
-# #     return False
+  print(my_randoms)
 ​
-# # print(find_value_linear(my_randoms, my_value))
+ my_value = random.randint(0, my_range)
 ​
-# # my_randoms.sort()
-# # !!!!!!!Must be sorted for this to work
-# def find_value_binary(sort_list, value):
-#     # Edge case
-#     if len(sort_list) == 0:
-#         return False
+  def find_value_linear(sort_list, value):
+      for i in range(len(sort_list)):
+          if sort_list[i] == my_value:
+              return True
+​
+      return False
+​
+  print(find_value_linear(my_randoms, my_value))
+​
+my_randoms.sort()
+# !!!!!!!Must be sorted for this to work
+def find_value_binary(sort_list, value):
+    Edge case
+    if len(sort_list) == 0:
+        return False
     
-#     first = 0
+    first = 0
 ​
-#     last = (len(sort_list) - 1)
+    last = (len(sort_list) - 1)
 ​
-#     found = False
+    found = False
 ​
-#     # Loop until found, or check everything
-#     while first <= last and not found:
-#         # Find the middle of the list using integer division
-#         middle = (first + last) // 2
+    Loop until found, or check everything
+    while first <= last and not found:
+        Find the middle of the list using integer division
+        middle = (first + last) // 2
 ​
-#         # if found, update found
-#         if sort_list[middle] == value:
-#             found = True
-#         else:
-#             if value < sort_list[middle]:
-#                 last = middle - 1
+        if found, update found
+        if sort_list[middle] == value:
+            found = True
+        else:
+            if value < sort_list[middle]:
+                last = middle - 1
 ​
-#             else:
-#                 #Search upper half of remainder
-#                 first = middle + 1
+            else:
+                #Search upper half of remainder
+                first = middle + 1
 ​
-#     return found
+    return found
 ​
-# print(find_value_binary(my_randoms, my_value))
-# print(find_value_binary(my_randoms, my_value))
-# print(find_value_binary(my_randoms, my_value))
-# print(find_value_binary(my_randoms, my_value))
-# print(find_value_binary(my_randoms, my_value))
-# print(find_value_binary(my_randoms, my_value))
-# print(find_value_binary(my_randoms, my_value))
-# print(find_value_binary(my_randoms, my_value))
-# print(find_value_binary(my_randoms, my_value))
-# print(find_value_binary(my_randoms, my_value))
+print(find_value_binary(my_randoms, my_value))
+print(find_value_binary(my_randoms, my_value))
+print(find_value_binary(my_randoms, my_value))
+print(find_value_binary(my_randoms, my_value))
+print(find_value_binary(my_randoms, my_value))
+print(find_value_binary(my_randoms, my_value))
+print(find_value_binary(my_randoms, my_value))
+print(find_value_binary(my_randoms, my_value))
+print(find_value_binary(my_randoms, my_value))
+print(find_value_binary(my_randoms, my_value))
 ​
 ​
 ​
