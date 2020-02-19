@@ -25,19 +25,26 @@ print(merge([1, 3, 5, 7, 9,33,44,49], [2,4,6,8,12]))
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
-    # TO-DO
+    # start with a base case
     if len(arr) <= 1:
         return arr
-
     # make a mid point
     index_split = len(arr) // 2
     # separate the array into two parts -> left & right
     left_side = merge_sort(arr[:index_split])
     right_side = merge_sort(arr[index_split:])
+    #Run this step repeatedly until all arrays are a length of 1
+
     # print("LEFT SIDE: ", left_side)
     # print("RIGHT SIDE: ", right_side)
     return(merge(left_side, right_side))
 print(merge_sort([1, 3, 5, 7, 9, 32, 44, 49, 0, 2, 4, 6, 6]))
+
+
+
+
+
+
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
